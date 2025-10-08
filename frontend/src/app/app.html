@@ -1,0 +1,31 @@
+
+<div class="navbar">
+  <div class="navbar-inner">
+
+    <a routerLink="/" class="brand">WeSport</a>
+
+    <nav class="nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/me" *ngIf="auth.isLoggedIn()">I miei eventi</a>
+      <a routerLink="/create" *ngIf="auth.hasRole('ORGANIZER')">Crea evento</a>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <ng-container *ngIf="!auth.isLoggedIn(); else logged">
+      <button class="btn btn-primary" (click)="auth.login()">Login</button>
+    </ng-container>
+
+    <ng-template #logged>
+      <div class="user" style="display:flex;align-items:center;gap:8px">
+        <span class="muted">{{ auth.username() }}</span>
+        <a routerLink="/me" class="btn btn-outline">Dashboard</a>
+        <button class="btn" (click)="auth.logout()">Logout</button>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

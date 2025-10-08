@@ -1,0 +1,11 @@
+﻿target/
+.idea/
+*.iml
+*.log
+*.env
+.DS_Store
+# Java & tools
+*.class
+hs_err_pid*
+# OS
+Thumbs.db

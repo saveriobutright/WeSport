@@ -1,0 +1,38 @@
+{
+  "realm": "wesport",
+  "enabled": true,
+  "displayName": "WeSport Realm",
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
+  "roles": {
+    "realm": [
+      { "name": "USER" },
+      { "name": "ORGANIZER" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "wesport-angular",
+      "name": "WeSport Angular",
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://localhost:4200/*"],
+      "webOrigins": ["http://localhost:4200"],
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:4200/*"
+      }
+    },
+    {
+      "clientId": "wesport-backend",
+      "name": "WeSport Backend",
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "CHANGE_ME_DEV_SECRET",
+      "serviceAccountsEnabled": false,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true
+    }
+  ]
+}
