@@ -4,7 +4,7 @@
 *.log
 *.env
 .DS_Store
-# Java & tools
+# Java
 *.class
 hs_err_pid*
 # OS
