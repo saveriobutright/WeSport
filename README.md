@@ -58,3 +58,23 @@ covering backend design, authentication, authorization and data persistence.
 ## ⚙️ How to run the project
 ```bash
 docker-compose up
+
+---
+
+## Demo accounts (user/password)
+- admin/admin
+- user/user
+
+---
+
+## Overcame challenges
+- Desining RESTful APIs
+- Structuring and producing a real backend project
+- Managing authentication with Keycloak
+- Handling relational databases
+- Using Docker for local development
+
+---
+
+## License
+This project is licensed under the MIT License.
