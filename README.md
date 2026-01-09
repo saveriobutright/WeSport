@@ -60,6 +60,9 @@ covering backend design, authentication, authorization and data persistence.
 docker-compose up
 ```
 ---
+## Architecture diagram
+![Architecture Diagram](architecture.png)
+---
 
 ## Demo accounts (user/password)
 - admin/admin
