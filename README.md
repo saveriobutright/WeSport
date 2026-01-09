@@ -55,10 +55,10 @@ covering backend design, authentication, authorization and data persistence.
 
 ---
 
-## ⚙️ How to run the project
+## How to run the project
 ```bash
 docker-compose up
-
+```
 ---
 
 ## Demo accounts (user/password)
