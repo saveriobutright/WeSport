@@ -1,23 +1,51 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
+import { AuthService } from './auth.service';
 
 describe('App', () => {
+  const authServiceMock = {
+    isLoggedIn: () => false,
+    hasRole: () => false,
+    username: () => '',
+    login: () => undefined,
+    logout: () => undefined
+  };
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [
+        provideRouter([]),
+        {
+          provide: AuthService,
+          useValue: authServiceMock
+        }
+      ]
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the application', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('should display the WeSport brand', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, frontend');
+
+    const element = fixture.nativeElement as HTMLElement;
+
+    expect(element.querySelector('.brand')?.textContent?.trim()).toBe('WeSport');
+  });
+
+  it('should display the login button for unauthenticated users', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+
+    const element = fixture.nativeElement as HTMLElement;
+
+    expect(element.querySelector('button')?.textContent?.trim()).toBe('Login');
   });
 });
