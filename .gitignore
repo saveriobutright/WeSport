@@ -2,7 +2,10 @@
 .idea/
 *.iml
 *.log
-*.env
+# Environment files
+.env
+.env.*
+!.env.example
 .DS_Store
 *.class
 hs_err_pid*
