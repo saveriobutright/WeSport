@@ -1,4 +1,6 @@
 # WeSport
+[![Full-stack CI](https://github.com/saveriobutright/WeSport/actions/workflows/full-stack-ci.yml/badge.svg)](https://github.com/saveriobutright/WeSport/actions/workflows/full-stack-ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 WeSport is a full-stack web platform for creating, discovering and joining amateur sports events.
 
